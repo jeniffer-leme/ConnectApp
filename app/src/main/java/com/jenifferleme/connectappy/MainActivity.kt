@@ -8,6 +8,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.jenifferleme.connectappy.databinding.ActivityMainBinding
 import com.jenifferleme.connectappy.ui.login.LoginActivity
+import com.jenifferleme.connectappy.ui.post.PostActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -20,7 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        // Exemplo simples de como deslogar o usuário
+        binding.btnCreatePost.setOnClickListener { // Antes era btnNewPost
+            val intent = Intent(this, PostActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, LoginActivity::class.java)

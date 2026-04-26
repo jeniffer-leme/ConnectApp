@@ -12,4 +12,12 @@
     <string name="hint_confirm_password">Confirmar Senha</string>
     <string name="btn_register">Cadastrar</string>
     <string name="error_password_mismatch">As senhas não conferem!</string>
+
+    <string name="title_new_post">Nova Postagem</string>
+    <string name="hint_description">O que você está pensando?</string>
+    <string name="btn_select_image">Selecionar Foto</string>
+    <string name="btn_publish">Publicar</string>
+    <string name="label_location">Localização: </string>
+    <string name="status_fetching_location">Buscando cidade...</string>
+    <string name="error_no_image">Por favor, selecione uma foto.</string>
 </resources>
