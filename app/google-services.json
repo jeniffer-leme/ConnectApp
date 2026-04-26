@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948001515897",
+    "project_id": "connectapp-7d35d",
+    "storage_bucket": "connectapp-7d35d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948001515897:android:667a3a0692fe68a21aa7a8",
+        "android_client_info": {
+          "package_name": "com.jenifferleme.connectappy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALgXHtB-3vDTfwb1GyUXgmWuqO7DdNGNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

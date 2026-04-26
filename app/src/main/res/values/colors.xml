@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_500">#6200EE</color>
+    <color name="primary_social">#1877F2</color> <color name="primary_dark">#0A56B1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray_bg">#F0F2F5</color>
+    <color name="text_hint">#8D949E</color>
+</resources>

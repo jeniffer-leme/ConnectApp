@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ConnectApp</string>
+
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="btn_login">Entrar</string>
+    <string name="link_create_account">Criar novo usuário</string>
+    <string name="error_empty_fields">Preencha todos os campos!</string>
+
+    <string name="title_register">Criar Conta</string>
+    <string name="hint_full_name">Nome completo</string>
+    <string name="hint_confirm_password">Confirmar Senha</string>
+    <string name="btn_register">Cadastrar</string>
+    <string name="error_password_mismatch">As senhas não conferem!</string>
+</resources>
