@@ -28,17 +28,52 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <EditText
+        android:id="@+id/editSearchCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Filtrar por cidade..."
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSearch" />
+
+    <ImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_search"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/editSearchCity"
+        app:layout_constraintBottom_toBottomOf="@id/editSearchCity"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFeed"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+        app:layout_constraintTop_toBottomOf="@id/editSearchCity"
         app:layout_constraintBottom_toTopOf="@id/btnCreatePost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEmptyFeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nenhuma postagem encontrada para esta cidade."
+        android:textSize="16sp"
+        android:textColor="#757575"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/rvFeed"
+        app:layout_constraintBottom_toBottomOf="@id/rvFeed"
+        app:layout_constraintStart_toStartOf="@id/rvFeed"
+        app:layout_constraintEnd_toEndOf="@id/rvFeed" />
 
     <Button
         android:id="@+id/btnCreatePost"

@@ -1,12 +1,13 @@
 package com.jenifferleme.connectappy.model
 
-import com.google.firebase.firestore.ServerTimestamp
-import java.util.Date
+import com.google.firebase.firestore.Exclude
+import com.google.firebase.Timestamp
 
 data class Post(
-    val texto: String = "",
-    val imagem: String = "", // Aqui será armazenada a String Base64
-    val localizacao: String = "",
+    @get:Exclude var id: String = "", // Usaremos para o Delete depois
     val autor: String = "",
-    @ServerTimestamp val data: Date? = null
+    val data: Timestamp? = null, // Usaremos este para a ordenação
+    val imagem: String = "",     // A String Base64
+    val localizacao: String = "",
+    val texto: String = ""
 )

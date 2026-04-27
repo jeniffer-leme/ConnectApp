@@ -2,6 +2,7 @@ package com.jenifferleme.connectappy.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -19,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
 
-    // Variáveis do Feed e Banco de Dados
     private lateinit var adapter: PostAdapter
     private val postList = mutableListOf<Post>()
     private val db = Firebase.firestore
@@ -31,20 +31,23 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        // Inicializa o RecyclerView e busca os posts
         setupRecyclerView()
         fetchPosts()
 
         binding.btnCreatePost.setOnClickListener {
-            val intent = Intent(this, PostActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, PostActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {
             auth.signOut()
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
+        }
+
+        // Lógica da Busca [RF3-1]
+        binding.btnSearch.setOnClickListener {
+            val cidade = binding.editSearchCity.text.toString().trim()
+            searchByCity(cidade)
         }
     }
 
@@ -53,26 +56,66 @@ class MainActivity : AppCompatActivity() {
         binding.rvFeed.adapter = adapter
     }
 
+    // 1. Busca inicial (Feed completo)
     private fun fetchPosts() {
-        // Busca no Firestore ordenando pelas mais recentes (RF3-1)
         db.collection("postagens")
             .orderBy("data", Query.Direction.DESCENDING)
             .addSnapshotListener { value, error ->
-                // 1. Se houver erro, avisa e para a execução
                 if (error != null) {
                     Toast.makeText(this, "Erro ao carregar feed", Toast.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
 
-                // 2. Se não houver erro, processa os dados (DENTRO do listener)
                 postList.clear()
-                if (value != null) {
-                    for (doc in value) {
+                value?.let {
+                    for (doc in it) {
                         val post = doc.toObject(Post::class.java)
+                        post.id = doc.id
                         postList.add(post)
                     }
                     adapter.notifyDataSetChanged()
+                    updateEmptyState() // Atualiza se está vazio ou não
                 }
             }
+    }
+
+    // 2. Função de Busca por Cidade [RF3-1]
+    private fun searchByCity(cityName: String) {
+        val query = if (cityName.isEmpty()) {
+            db.collection("postagens").orderBy("data", Query.Direction.DESCENDING)
+        } else {
+            db.collection("postagens")
+                .whereEqualTo("localizacao", "Localização: $cityName")
+                .orderBy("data", Query.Direction.DESCENDING)
+        }
+
+        query.addSnapshotListener { value, error ->
+            if (error != null) {
+                Toast.makeText(this, "Erro na busca", Toast.LENGTH_SHORT).show()
+                return@addSnapshotListener
+            }
+
+            postList.clear()
+            value?.let {
+                for (doc in it) {
+                    val post = doc.toObject(Post::class.java)
+                    post.id = doc.id
+                    postList.add(post)
+                }
+                adapter.notifyDataSetChanged()
+                updateEmptyState() // Atualiza se a busca retornou algo
+            }
+        }
+    }
+
+    // 3. Gerencia o aviso de "Nada encontrado"
+    private fun updateEmptyState() {
+        if (postList.isEmpty()) {
+            binding.txtEmptyFeed.visibility = View.VISIBLE
+            binding.rvFeed.visibility = View.GONE
+        } else {
+            binding.txtEmptyFeed.visibility = View.GONE
+            binding.rvFeed.visibility = View.VISIBLE
+        }
     }
 }
