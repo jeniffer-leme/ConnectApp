@@ -19,26 +19,29 @@ O app oferece uma interface moderna e adaptável, permitindo que o utilizador:
 
 ### ☀️ Modo Claro (Português)
 <p align="left">
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/login_claro.png?raw=true" width="200"/>
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/feed_claro.png?raw=true" width="200"/>
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/perfil_claro.png?raw=true" width="200"/>
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/post_claro.png?raw=true" width="200"/>
+  <img src="imagens/login_modo-claro.png" width="150"/>
+  <img src="imagens/cadastro_modo-claro.png" width="150"/>
+  <img src="imagens/perfil_modo-claro.png" width="150"/>
+  <img src="imagens/postagem_modo-claro.png" width="150"/>
+  <img src="imagens/feed_modo-claro.png" width="150"/>
 </p>
 
 ### 🌙 Modo Escuro (Português)
 <p align="left">
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/login_escuro.png?raw=true" width="200"/>
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/feed_escuro.png?raw=true" width="200"/>
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/perfil_escuro.png?raw=true" width="200"/>
-  <img src="https://github.com/jeniffer-leme/connect-app/blob/main/img/post_escuro.png?raw=true" width="200"/>
+  <img src="imagens/login_modo-escuro.png" width="150"/>
+  <img src="imagens/cadastro_modo-escuro.png" width="150"/>
+  <img src="imagens/perfil_modo-escuro.png" width="150"/>
+  <img src="imagens/postagem_modo-escuro.png" width="150"/>
+  <img src="imagens/feed_modo-escuro.png" width="150"/>
 </p>
 
-### 🇬🇧 English Mode (Light)
+### English Mode (Light)
 <p align="left">
-  &nbsp;&nbsp;&nbsp;<img src="https://github.com/jeniffer-leme/guia-pocket/blob/main/img/capa_modo-ingles.png?raw=true" width="200"/>
-  &nbsp;&nbsp;&nbsp;<img src="https://github.com/jeniffer-leme/guia-pocket/blob/main/img/lista_modo-ingles.png?raw=true" width="200"/>
-  &nbsp;&nbsp;&nbsp;<img src="https://github.com/jeniffer-leme/guia-pocket/blob/main/img/estabelecimento_modo-ingles.png?raw=true" width="200"/>
-  &nbsp;&nbsp;&nbsp;<img src="https://github.com/jeniffer-leme/guia-pocket/blob/main/img/cadastro_modo-ingles.png?raw=true" width="200"/>
+  <img src="imagens/login_ingles.png" width="150"/>
+  <img src="imagens/cadastro_ingles.png" width="150"/>
+  <img src="imagens/perfil_ingles.png" width="150"/>
+  <img src="imagens/postagem_ingles.png" width="150"/>
+  <img src="imagens/feed_ingles.png" width="150"/>
 </p>
 
 ---
