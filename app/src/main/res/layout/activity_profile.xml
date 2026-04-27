@@ -4,18 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    android:background="@color/gray_bg">
-
-    <TextView
-        android:id="@+id/txtProfileTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Meu Perfil"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary_social"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:background="?android:attr/windowBackground"> <TextView
+    android:id="@+id/txtProfileTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Meu Perfil"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:textColor="@color/primary_social"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imgProfile"
@@ -70,6 +68,7 @@
         android:text="Salvar Alterações"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/primary_social"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/editProfilePassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -80,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Voltar ao Feed"
-        android:textColor="#757575"
+        android:textColor="?android:attr/textColorSecondary"
         app:layout_constraintTop_toBottomOf="@id/btnSaveProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

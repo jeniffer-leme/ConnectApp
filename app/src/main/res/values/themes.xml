@@ -1,12 +1,21 @@
-<resources>
-    <style name="Theme.ConnectApp" parent="Theme.Material3.DayNight.NoActionBar">
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.ConnectApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary_social</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <item name="colorSecondary">@color/primary_social</item>
+        <item name="colorSecondary">@color/accent_social</item>
+        <item name="colorSecondaryVariant">@color/accent_social</item>
         <item name="colorOnSecondary">@color/white</item>
 
-        <item name="android:windowBackground">@color/gray_bg</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/primary_social</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.ConnectApp.SmallComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.ConnectApp.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
     </style>
 </resources>
