@@ -9,7 +9,7 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
-        android:contentDescription="Logotipo FeitoPorMim"
+        android:contentDescription="@string/desc_logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
