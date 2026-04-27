@@ -9,14 +9,25 @@
 
     <TextView
         android:id="@+id/txtWelcome"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="ConnectApp Feed"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@color/primary_social"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnProfile" />
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_manage"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnLogout"
+        android:layout_marginEnd="4dp" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -52,38 +63,34 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFeed"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/editSearchCity"
-        app:layout_constraintBottom_toTopOf="@id/btnCreatePost"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/btnCreatePost" />
 
     <TextView
         android:id="@+id/txtEmptyFeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nenhuma postagem encontrada para esta cidade."
+        android:text="Nenhuma postagem encontrada."
         android:textSize="16sp"
         android:textColor="#757575"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="@id/rvFeed"
         app:layout_constraintBottom_toBottomOf="@id/rvFeed"
-        app:layout_constraintStart_toStartOf="@id/rvFeed"
-        app:layout_constraintEnd_toEndOf="@id/rvFeed" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnCreatePost"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nova Postagem"
         android:backgroundTint="@color/primary_social"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

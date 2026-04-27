@@ -49,6 +49,11 @@ class MainActivity : AppCompatActivity() {
             val cidade = binding.editSearchCity.text.toString().trim()
             searchByCity(cidade)
         }
+
+        binding.btnProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupRecyclerView() {
