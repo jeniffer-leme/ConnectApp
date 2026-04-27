@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.jenifferleme.connectappy.MainActivity
+import com.jenifferleme.connectappy.ui.MainActivity
 import com.jenifferleme.connectappy.databinding.ActivityLoginBinding
 import com.jenifferleme.connectappy.ui.register.RegisterActivity
 

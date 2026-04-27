@@ -44,8 +44,12 @@ class PostActivity : AppCompatActivity() {
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tenta buscar a localização assim que a tela abre
         fetchLocation()
+
+        // O lugar correto do Cancelar é aqui!
+        binding.btnCancel.setOnClickListener {
+            finish()
+        }
 
         binding.btnSelectImage.setOnClickListener {
             getImage.launch("image/*")
@@ -139,5 +143,8 @@ class PostActivity : AppCompatActivity() {
                 binding.btnPublish.text = "Publicar"
                 Toast.makeText(this, "Erro ao publicar: ${e.message}", Toast.LENGTH_LONG).show()
             }
+        binding.btnCancel.setOnClickListener {
+            finish() // "Mata" a tela de postagem e volta para o feed
+        }
     }
 }
