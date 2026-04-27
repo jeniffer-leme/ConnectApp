@@ -16,18 +16,20 @@
         android:textStyle="bold"
         android:textColor="@color/primary_social"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btnProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnProfile" />
 
     <ImageButton
         android:id="@+id/btnProfile"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@android:drawable/ic_menu_manage"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/empty_profile"
         android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnLogout"
-        android:layout_marginEnd="4dp" />
+        android:layout_marginEnd="8dp" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -36,7 +38,8 @@
         android:layout_height="wrap_content"
         android:text="Sair"
         android:textColor="#F44336"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnProfile"
+        app:layout_constraintBottom_toBottomOf="@id/btnProfile"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
@@ -47,7 +50,7 @@
         android:layout_marginTop="16dp"
         android:padding="12dp"
         android:background="@android:drawable/editbox_background"
-        app:layout_constraintTop_toBottomOf="@id/txtWelcome"
+        app:layout_constraintTop_toBottomOf="@id/btnProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnSearch" />
 

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.jenifferleme.connectappy.R // Importante para acessar o drawable
 import com.jenifferleme.connectappy.databinding.ItemPostBinding
 import com.jenifferleme.connectappy.model.Post
 import java.text.SimpleDateFormat
@@ -41,15 +42,22 @@ class PostAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostAdap
             holder.binding.txtPostData.text = sdf.format(date)
         }
 
-        // 2. Conversão de Base64 para Imagem
-        holder.binding.imgPostFeed.setImageBitmap(null) // Limpa para evitar imagem errada ao rolar
-        if (post.imagem.isNotEmpty()) {
+        // 2. Lógica da Imagem da Postagem com Placeholder
+        if (post.imagem.isNullOrEmpty()) {
+            // Se a postagem não tiver imagem (segurança), usa o placeholder
+            holder.binding.imgPostFeed.setImageResource(R.drawable.empty_profile)
+        } else {
             try {
                 val imageBytes = Base64.decode(post.imagem, Base64.DEFAULT)
                 val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
-                holder.binding.imgPostFeed.setImageBitmap(decodedImage)
+
+                if (decodedImage != null) {
+                    holder.binding.imgPostFeed.setImageBitmap(decodedImage)
+                } else {
+                    holder.binding.imgPostFeed.setImageResource(R.drawable.empty_profile)
+                }
             } catch (e: Exception) {
-                // Em caso de erro, pode definir uma imagem de erro aqui
+                holder.binding.imgPostFeed.setImageResource(R.drawable.empty_profile)
             }
         }
 
