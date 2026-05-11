@@ -1,7 +1,7 @@
-# 🤝 ConnectApp - Social Network
+# 🤝 FeitoPorMim - Social Network
 
 ## 📱 Descrição
-O **ConnectApp** é uma rede social Android desenvolvida em **Kotlin** que permite aos utilizadores partilhar momentos, fotos e informações de localização. O aplicativo foi construído com foco em **experiência do utilizador (UX)** e escalabilidade, utilizando tecnologias modernas de nuvem.
+O **FeitoPorMim** é uma rede social Android desenvolvida em **Kotlin** que permite aos utilizadores partilhar momentos, fotos e informações de localização. O aplicativo foi construído com foco em **experiência do utilizador (UX)** e escalabilidade, utilizando tecnologias modernas de nuvem.
 
 O app oferece uma interface moderna e adaptável, permitindo que o utilizador:
 - 🔐 Realize **Autenticação** segura (Login e Cadastro);
