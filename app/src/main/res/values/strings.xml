@@ -24,7 +24,7 @@
     <string name="error_no_image">Please select a photo.</string>
     <string name="btn_cancel">Cancel</string>
 
-    <string name="title_feed">ConnectApp Feed</string>
+    <string name="title_feed">FeitoPorMim Feed</string>
     <string name="btn_logout">Logout</string>
     <string name="hint_search_city">Filter by city...</string>
     <string name="empty_feed_message">No posts found.</string>

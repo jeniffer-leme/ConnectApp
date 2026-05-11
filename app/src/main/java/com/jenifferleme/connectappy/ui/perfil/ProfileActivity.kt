@@ -12,7 +12,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.jenifferleme.connectappy.R // Importante para acessar o drawable
+import com.jenifferleme.connectappy.R
 import com.jenifferleme.connectappy.databinding.ActivityProfileBinding
 import java.io.ByteArrayOutputStream
 
@@ -45,7 +45,6 @@ class ProfileActivity : AppCompatActivity() {
 
         binding.editProfileName.setText(user.displayName)
 
-        // 1. Carregar Foto Existente (ou Placeholder se estiver vazio)
         loadExistingPhoto(user.uid)
 
         binding.imgProfile.setOnClickListener { galleryLauncher.launch("image/*") }
@@ -110,18 +109,15 @@ class ProfileActivity : AppCompatActivity() {
                     binding.imgProfile.setImageResource(R.drawable.empty_profile)
                 }
             } else {
-                // Se não houver nada no banco, define o placeholder azul
                 binding.imgProfile.setImageResource(R.drawable.empty_profile)
             }
         }.addOnFailureListener {
-            // Em caso de erro de conexão, também mostra o placeholder
             binding.imgProfile.setImageResource(R.drawable.empty_profile)
         }
     }
 
     private fun bitmapToBase64(bitmap: Bitmap): String {
         val byteArrayOutputStream = ByteArrayOutputStream()
-        // Reduzi para 60% para garantir que a foto de perfil nunca trave o Firestore
         bitmap.compress(Bitmap.CompressFormat.JPEG, 60, byteArrayOutputStream)
         val byteArray = byteArrayOutputStream.toByteArray()
         return Base64.encodeToString(byteArray, Base64.DEFAULT)

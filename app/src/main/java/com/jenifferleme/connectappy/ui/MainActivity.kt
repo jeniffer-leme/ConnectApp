@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        // Lógica da Busca [RF3-1]
         binding.btnSearch.setOnClickListener {
             val cidade = binding.editSearchCity.text.toString().trim()
             searchByCity(cidade)
@@ -61,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         binding.rvFeed.adapter = adapter
     }
 
-    // 1. Busca inicial (Feed completo)
     private fun fetchPosts() {
         db.collection("postagens")
             .orderBy("data", Query.Direction.DESCENDING)
@@ -79,12 +77,11 @@ class MainActivity : AppCompatActivity() {
                         postList.add(post)
                     }
                     adapter.notifyDataSetChanged()
-                    updateEmptyState() // Atualiza se está vazio ou não
+                    updateEmptyState()
                 }
             }
     }
 
-    // 2. Função de Busca por Cidade [RF3-1]
     private fun searchByCity(cityName: String) {
         val query = if (cityName.isEmpty()) {
             db.collection("postagens").orderBy("data", Query.Direction.DESCENDING)
@@ -108,12 +105,11 @@ class MainActivity : AppCompatActivity() {
                     postList.add(post)
                 }
                 adapter.notifyDataSetChanged()
-                updateEmptyState() // Atualiza se a busca retornou algo
+                updateEmptyState()
             }
         }
     }
 
-    // 3. Gerencia o aviso de "Nada encontrado"
     private fun updateEmptyState() {
         if (postList.isEmpty()) {
             binding.txtEmptyFeed.visibility = View.VISIBLE

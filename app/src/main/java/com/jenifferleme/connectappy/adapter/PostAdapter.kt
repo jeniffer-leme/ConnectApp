@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.jenifferleme.connectappy.R // Importante para acessar o drawable
+import com.jenifferleme.connectappy.R
 import com.jenifferleme.connectappy.databinding.ItemPostBinding
 import com.jenifferleme.connectappy.model.Post
 import java.text.SimpleDateFormat
@@ -30,21 +30,17 @@ class PostAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostAdap
         val post = posts[position]
         val context = holder.itemView.context
 
-        // Dados básicos
         holder.binding.txtPostAutor.text = post.autor
         holder.binding.txtPostLocal.text = post.localizacao
         holder.binding.txtPostDescricao.text = post.texto
 
-        // 1. Formatar a Data
         post.data?.let { timestamp ->
             val date = timestamp.toDate()
             val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
             holder.binding.txtPostData.text = sdf.format(date)
         }
 
-        // 2. Lógica da Imagem da Postagem com Placeholder
         if (post.imagem.isNullOrEmpty()) {
-            // Se a postagem não tiver imagem (segurança), usa o placeholder
             holder.binding.imgPostFeed.setImageResource(R.drawable.empty_profile)
         } else {
             try {
@@ -61,7 +57,6 @@ class PostAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostAdap
             }
         }
 
-        // 3. Lógica de Exclusão (Segurança)
         val currentUserEmail = Firebase.auth.currentUser?.email
         if (post.autor == currentUserEmail) {
             holder.binding.btnDeletePost.visibility = View.VISIBLE
