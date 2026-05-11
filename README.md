@@ -47,12 +47,12 @@ O app oferece uma interface moderna e adaptável, permitindo que o utilizador:
 ---
 
 ## 🎥 Demonstração em Vídeo
-📹 **[Clique Aqui - Demonstração do App](https://github.com/jeniffer-leme/guia-pocket/blob/main/img/video_app.webm)**
+📹 **[Clique Aqui - Demonstração do App](imagens/video_app.webm)**
 
 ## 🎬 Apresentação em Vídeo
 Assista à demonstração completa do aplicativo, suas funcionalidades e implementação técnica!
 
-➡️ **[ASSISTA AQUI NO YOUTUBE](https://www.youtube.com/watch?v=OfESKiAcayE)** ⬅️
+➡️ **[ASSISTA AQUI NO YOUTUBE](https://youtu.be/m9xO_1wiHUg?si=YM4PTdB1aIJ8inCm)** ⬅️
 
 
 ---
